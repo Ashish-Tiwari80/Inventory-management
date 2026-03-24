@@ -2,7 +2,7 @@ import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import {
   ExpenseByCategorySummary,
   useGetDashboardMetricsQuery,
-} from "../state/api";
+} from "../../state/api";
 import { TrendingUp } from "lucide-react";
 
 type ExpenseSums = {

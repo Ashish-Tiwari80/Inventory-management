@@ -2,7 +2,7 @@
 
 import { Archive, CircleDollarSign, Clipboard, Layout, LucideIcon, Menu, SlidersHorizontal, User } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "../redux";
-import { setIsSidebarCollapsed } from "../state";
+import { setIsSidebarCollapsed } from "../../state";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
