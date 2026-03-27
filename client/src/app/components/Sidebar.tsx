@@ -4,7 +4,9 @@ import { Archive, CircleDollarSign, Clipboard, Layout, LucideIcon, Menu, Sliders
 import { useAppDispatch, useAppSelector } from "../redux";
 import { setIsSidebarCollapsed } from "../../state";
 import { usePathname } from "next/navigation";
+import logo from "@/assets/logo.png";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SidebarLinkProps {
   href: string;
@@ -64,7 +66,13 @@ const Sidebar = () => {
           isSidebarCollapsed ? "px-5" : "px-8"
         }`}
       >
-        <div>logo</div>
+        <Image
+          src={logo}
+          alt="mystock-logo"
+          width={27}
+          height={27}
+          className="rounded w-8"
+        />
         <h1
           className={`${isSidebarCollapsed ? "hidden" : "block"} font-extrabold text-2xl`}
         >

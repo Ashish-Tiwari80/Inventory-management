@@ -6,6 +6,10 @@ import { PlusCircleIcon, SearchIcon } from "lucide-react";
 import Header from "../components/Header";
 import Rating from "../components/Rating";
 import CreateProductModal from "./CreateProductModal";
+import product1 from "@/assets/product1.png";
+import product2 from "@/assets/product2.png";
+import product3 from "@/assets/product3.png";
+import Image from "next/image";
 
 type ProductFormData = {
   name: string;
@@ -17,6 +21,8 @@ type ProductFormData = {
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const productImages = [product1, product2, product3];
 
   const {
     data: products,
@@ -73,28 +79,37 @@ const Products = () => {
         {isLoading ? (
           <div>Loading...</div>
         ) : (
-          products?.map((product) => (
-            <div
-              key={product.productId}
-              className="border shadow rounded-md p-4 max-w-full w-full mx-auto"
-            >
-              <div className="flex flex-col items-center">
-                img
-                <h3 className="text-lg text-gray-900 font-semibold">
-                  {product.name}
-                </h3>
-                <p className="text-gray-800">${product.price.toFixed(2)}</p>
-                <div className="text-sm text-gray-600 mt-1">
-                  Stock: {product.stockQuantity}
-                </div>
-                {product.rating && (
-                  <div className="flex items-center mt-2">
-                    <Rating rating={product.rating} />
+          products?.map((product, index) => {
+            const randomImage = productImages[index % productImages.length];
+            return (
+              <div
+                key={product.productId}
+                className="border shadow rounded-md p-4 max-w-full w-full mx-auto"
+              >
+                <div className="flex flex-col items-center">
+                  <Image
+                    src={randomImage}
+                    alt={product.name}
+                    width={150}
+                    height={150}
+                    className="mb-3 rounded-2xl w-36 h-36"
+                  />
+                  <h3 className="text-lg text-gray-900 font-semibold">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-800">${product.price.toFixed(2)}</p>
+                  <div className="text-sm text-gray-600 mt-1">
+                    Stock: {product.stockQuantity}
                   </div>
-                )}
+                  {product.rating && (
+                    <div className="flex items-center mt-2">
+                      <Rating rating={product.rating} />
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))
+            );
+          })
         )}
       </div>
 
