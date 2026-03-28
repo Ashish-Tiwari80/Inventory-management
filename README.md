@@ -50,6 +50,7 @@ Planned to evolve into a **full SaaS-based eCommerce & inventory system**.
 
 ## 📁 Project Structure
 
+```
 Inventory-Management/
 │
 ├── client/                     # Frontend (Next.js + Redux)
@@ -98,6 +99,7 @@ Inventory-Management/
 │   └── package.json
 │
 └── README.md
+```
 
 ---
 
@@ -105,37 +107,36 @@ Inventory-Management/
 
 1. Clone the repository
 
+```
 git clone https://github.com/Ashish-Tiwari80/Inventory-management.git
 cd Inventory-management
+```
 
 2. Install dependencies
 
+```
 npm install
+```
 
 3. Setup environment variables
 
 Create a `.env` file:
 
+```
 DATABASE_URL=your_postgresql_connection_string
+```
 
 4. Run Prisma migrations
 
+```
 npx prisma migrate dev
+```
 
 5. Start the development server
 
+```
 npm run dev
-
----
-
-## 📌 Limitations (Current)
-
-* ❌ No authentication system
-* ❌ No user-specific data (same data for all users)
-* ❌ No product update/delete functionality
-* ❌ No cloud image upload (uses local assets)
-* ❌ No payment or order system
-* ❌ Not deployed as SaaS
+```
 
 ---
 
