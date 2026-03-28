@@ -1,4 +1,4 @@
-# 📦 Inventory Management Dashboard (Work in Progress)
+# 📦 Inventory Management Dashboard
 
 A modern inventory management dashboard built using **Next.js, React, Redux, PostgreSQL, and Prisma**.
 This project is currently under development and focuses on managing products, stock, and basic analytics.
